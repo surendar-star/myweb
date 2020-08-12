@@ -4,12 +4,12 @@ pipeline{
     agent any
     
     environment{
-        PATH = "/opt/maven3/bin:$PATH"
+        PATH = "/usr/bin:$PATH"
     }
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'github', url: 'https://github.com/javahometech/myweb'
+                git 'https://github.com/surendar-star/myweb.git'
             }
         }
         stage("Maven Build"){
